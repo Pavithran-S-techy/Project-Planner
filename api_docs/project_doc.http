@@ -1,0 +1,167 @@
+### list all projects
+
+GET http://127.0.0.1:8000/projects/
+
+### create a project
+
+POST http://127.0.0.1:8000/projects/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMwODcxLCJpYXQiOjE3OTQwNDQ0NzEsImp0aSI6ImZmYWM3OGVmZTUyYTQzMmNhMzY3NGNmY2JlODlhMGMzIiwidXNlcl9pZCI6IjEifQ.w7QBfyGXM6BkDkYnSkum-Dd6VrwETngTthMzKntnOPY
+Content-Type: multipart/form-data; boundary=abc
+
+--abc
+Content-Disposition: form-data; name="name"
+
+BookNest - Online Library Management System
+--abc
+Content-Disposition: form-data; name="description"
+
+<h2>BookNest - Online Library Management System</h2>
+
+<p>
+BookNest is a comprehensive Django-based Online Library Management System designed
+to streamline book catalog management, member registration, borrowing workflows,
+reservations, and reporting. The platform provides role-based access for administrators,
+librarians, and members, enabling efficient library operations through a modern
+web interface and RESTful APIs.
+</p>
+
+<h3>Key Features</h3>
+<ul>
+    <li>User Authentication & Authorization</li>
+    <li>Book and Category Management</li>
+    <li>ISBN Tracking and Inventory Control</li>
+    <li>Borrow and Return Management</li>
+    <li>Book Reservation System</li>
+    <li>Advanced Search & Filtering</li>
+    <li>User Reviews and Ratings</li>
+    <li>Admin Dashboard with Analytics</li>
+    <li>Django REST Framework API Support</li>
+    <li>CKEditor-based Content Management</li>
+</ul>
+
+<h3>Technology Stack</h3>
+<ul>
+    <li>Django</li>
+    <li>Django REST Framework</li>
+    <li>MySQL</li>
+    <li>Bootstrap 5</li>
+    <li>CKEditor 5</li>
+    <li>JWT Authentication</li>
+</ul>
+
+<h3>Benefits</h3>
+<p>
+BookNest improves operational efficiency, simplifies inventory tracking,
+enhances user experience, and provides detailed reports for better decision-making.
+</p>
+
+--abc
+Content-Disposition: form-data; name="document"; filename="booknest_doc.pdf"
+Content-Type: application/pdf
+
+< C:/Users/Pavithran S/Downloads/booknest_doc.pdf
+
+--abc--
+
+### retrieve a project
+
+GET http://127.0.0.1:8000/projects/8d4fed88-2cf0-4aa3-b0b7-3157dddda9a6/
+
+### update a project
+
+PATCH http://127.0.0.1:8000/projects/8d4fed88-2cf0-4aa3-b0b7-3157dddda9a6/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMwODcxLCJpYXQiOjE3OTQwNDQ0NzEsImp0aSI6ImZmYWM3OGVmZTUyYTQzMmNhMzY3NGNmY2JlODlhMGMzIiwidXNlcl9pZCI6IjEifQ.w7QBfyGXM6BkDkYnSkum-Dd6VrwETngTthMzKntnOPY
+Content-Type: multipart/form-data; boundary=abc
+
+--abc
+Content-Disposition: form-data; name="name"
+
+SkillBridge - A learning platform
+--abc--
+
+### soft delete a project
+
+DELETE http://127.0.0.1:8000/projects/8d4fed88-2cf0-4aa3-b0b7-3157dddda9a6/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMwODcxLCJpYXQiOjE3OTQwNDQ0NzEsImp0aSI6ImZmYWM3OGVmZTUyYTQzMmNhMzY3NGNmY2JlODlhMGMzIiwidXNlcl9pZCI6IjEifQ.w7QBfyGXM6BkDkYnSkum-Dd6VrwETngTthMzKntnOPY
+
+### list all assigned projects
+
+GET http://127.0.0.1:8000/assigned-projects/
+
+### create an assigned project
+
+POST http://127.0.0.1:8000/assigned-projects/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMxNTI5LCJpYXQiOjE3OTQwNDUxMjksImp0aSI6ImU2MGI3YmNiNDJhMDQzZWFiZDdhYzZiOGE3Mjg0MmQ2IiwidXNlcl9pZCI6IjIifQ.41XCX19XJPTCb8v7KAnmzAZOn8inmtFkZ2u2KlJyXOc
+Content-Type: application/json
+
+{
+  "project": 2,
+  "coordinate": 2,
+  "developers": [4, 5, 6],
+  "project_duration": 6,
+  "project_start_date": "2026-11-03",
+  "project_tentative_end_date": "2027-02-01"
+}
+
+### retrieve an assigned project
+
+GET http://127.0.0.1:8000/assigned-projects/b38a0a11-a584-495d-9f52-626a374e806f/
+
+
+### update an assigned project
+
+PATCH  http://127.0.0.1:8000/assigned-projects/b38a0a11-a584-495d-9f52-626a374e806f/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMxNTI5LCJpYXQiOjE3OTQwNDUxMjksImp0aSI6ImU2MGI3YmNiNDJhMDQzZWFiZDdhYzZiOGE3Mjg0MmQ2IiwidXNlcl9pZCI6IjIifQ.41XCX19XJPTCb8v7KAnmzAZOn8inmtFkZ2u2KlJyXOc
+Content-Type: application/json
+
+{
+    "developers" : [6,4,5,9]
+}
+
+### soft delete an assigned project
+
+DELETE http://127.0.0.1:8000/assigned-projects/d5f15cf3-d38a-4e66-a008-d905f7d75d53/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMxNTI5LCJpYXQiOjE3OTQwNDUxMjksImp0aSI6ImU2MGI3YmNiNDJhMDQzZWFiZDdhYzZiOGE3Mjg0MmQ2IiwidXNlcl9pZCI6IjIifQ.41XCX19XJPTCb8v7KAnmzAZOn8inmtFkZ2u2KlJyXOc
+
+### Retrieve a tasks
+
+GET http://127.0.0.1:8000/tasks/b38a0a11-a584-495d-9f52-626a374e806f/
+
+
+### create a task
+POST http://127.0.0.1:8000/tasks/b38a0a11-a584-495d-9f52-626a374e806f/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMxNTI5LCJpYXQiOjE3OTQwNDUxMjksImp0aSI6ImU2MGI3YmNiNDJhMDQzZWFiZDdhYzZiOGE3Mjg0MmQ2IiwidXNlcl9pZCI6IjIifQ.41XCX19XJPTCb8v7KAnmzAZOn8inmtFkZ2u2KlJyXOc
+Content-Type: application/json
+
+{
+  "assign_to": 6,
+  "title": "Design the project dashboard",
+  "description": "Create the initial dashboard layout.",
+  "priority": "Medium"
+}
+
+### Retrieve a task
+
+GET http://127.0.0.1:8000/tasks-retrieve-update-destroy/9862ecd6-d5cf-429a-8de1-b58e31777b83/
+
+### Update a task
+
+PATCH http://127.0.0.1:8000/tasks-retrieve-update-destroy/9862ecd6-d5cf-429a-8de1-b58e31777b83/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMxNTI5LCJpYXQiOjE3OTQwNDUxMjksImp0aSI6ImU2MGI3YmNiNDJhMDQzZWFiZDdhYzZiOGE3Mjg0MmQ2IiwidXNlcl9pZCI6IjIifQ.41XCX19XJPTCb8v7KAnmzAZOn8inmtFkZ2u2KlJyXOc
+Content-Type: application/json
+
+{
+ 
+  "duration": "02:00:00",
+  "start_date": "2026-11-06",
+  "end_date": "2026-11-07"
+}
+
+### Retrieve a task
+
+DELETE http://127.0.0.1:8000/tasks-retrieve-update-destroy/9862ecd6-d5cf-429a-8de1-b58e31777b83/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MTMxNTI5LCJpYXQiOjE3OTQwNDUxMjksImp0aSI6ImU2MGI3YmNiNDJhMDQzZWFiZDdhYzZiOGE3Mjg0MmQ2IiwidXNlcl9pZCI6IjIifQ.41XCX19XJPTCb8v7KAnmzAZOn8inmtFkZ2u2KlJyXOc
+
+### generate task by ai
+
+POST http://127.0.0.1:8000/generate-tasks/b38a0a11-a584-495d-9f52-626a374e806f/

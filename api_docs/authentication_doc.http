@@ -1,0 +1,28 @@
+### login
+
+### admin
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+### project coordinator login
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"nina.patel9452",
+    "password":"M31F%r6ayLxetxQ1HUj3qUR5"
+}
+
+### developer login
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"ava.thompson7244",
+    "password":"rxlq9N#SKsWO5Gh@fw@EzGHL"
+}
